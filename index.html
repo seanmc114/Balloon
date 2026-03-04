@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>mystery</title>
+<title>signal</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,21 +12,16 @@
 
 <button id="playBtn">PLAY</button>
 
+<input id="codeInput" placeholder="respond:" autocomplete="off">
+
+<div id="responseText"></div>
+
 </div>
 
-<audio id="audio1" controls>
-<source src="mystery1.mp3" type="audio/mpeg">
-</audio>
+<audio id="audio1" src="mystery1.mp3"></audio>
+<audio id="audio2" src="mystery2.mp3"></audio>
 
-<script>
-
-document.getElementById("playBtn").onclick = function(){
-
-document.getElementById("audio1").play();
-
-};
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
