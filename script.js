@@ -8,26 +8,18 @@ const responseText = document.getElementById("responseText");
 
 playBtn.onclick = function(){
 
-playBtn.style.display="none";
+playBtn.style.display = "none";
 
 audio1.play();
 
-};
-
-audio1.onended = function(){
+setTimeout(function(){
+audio2.play();
+},12000);  // second clip starts after 12 seconds
 
 setTimeout(function(){
-
-audio2.play();
-
-},1200);
-
-};
-
-audio2.onended = function(){
-
 input.style.display="block";
 input.focus();
+},20000);  // code box appears later
 
 };
 
@@ -56,4 +48,4 @@ responseText.innerText="send something back.";
 
 });
 
-}
+};
