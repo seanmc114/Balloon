@@ -1,56 +1,77 @@
-window.onload = function(){
+body{
+margin:0;
+background:black;
+color:white;
+font-family:monospace;
+display:flex;
+height:100vh;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
 
-const playBtn = document.getElementById("playBtn");
-const audio1 = document.getElementById("audio1");
-const audio2 = document.getElementById("audio2");
-const input = document.getElementById("codeInput");
-const responseText = document.getElementById("responseText");
+/* flicker */
 
-playBtn.addEventListener("click", function(){
+@keyframes flicker{
+0%{opacity:0.98;}
+50%{opacity:1;}
+100%{opacity:0.97;}
+}
 
-  playBtn.style.display = "none";
-  audio1.play();
+body{
+animation:flicker 0.25s infinite alternate;
+}
 
-});
+/* scanlines */
 
-audio1.addEventListener("ended", function(){
+body::after{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
 
-  setTimeout(function(){
-    audio2.play();
-  },1200);
+background:repeating-linear-gradient(
+0deg,
+rgba(255,255,255,0.03) 0px,
+rgba(255,255,255,0.03) 1px,
+transparent 2px,
+transparent 4px
+);
+}
 
-});
+.center{
+text-align:center;
+}
 
-audio2.addEventListener("ended", function(){
+button{
+background:none;
+color:white;
+border:1px solid white;
+padding:14px 28px;
+font-size:16px;
+cursor:pointer;
+letter-spacing:2px;
+}
 
-  input.style.display = "block";
-  input.focus();
+input{
+display:none;
+margin-top:20px;
+background:none;
+border:none;
+border-bottom:1px solid white;
+color:white;
+font-size:16px;
+text-align:center;
+outline:none;
+padding:10px;
+width:220px;
+}
 
-});
-
-input.addEventListener("keydown", function(e){
-
-  if(e.key === "Enter"){
-
-    const value = input.value.trim().toUpperCase();
-
-    if(value === "CONNECT"){
-
-      responseText.innerText = "we hear you.";
-      responseText.style.opacity = 1;
-
-      setTimeout(function(){
-        responseText.innerText = "is it happening now?";
-      },5000);
-
-      setTimeout(function(){
-        responseText.innerText = "send something back.";
-      },11000);
-
-    }
-
-  }
-
-});
-
+#responseText{
+margin-top:30px;
+opacity:0;
+transition:opacity 2s;
 }
