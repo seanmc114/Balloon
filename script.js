@@ -8,9 +8,8 @@ const responseText = document.getElementById("responseText");
 
 playBtn.onclick = function(){
 
-playBtn.style.display = "none";
+playBtn.style.display="none";
 
-audio1.currentTime = 0;
 audio1.play();
 
 };
@@ -19,38 +18,37 @@ audio1.onended = function(){
 
 setTimeout(function(){
 
-audio2.currentTime = 0;
 audio2.play();
 
-},1500);
+},1200);
 
 };
 
 audio2.onended = function(){
 
-input.style.display = "block";
+input.style.display="block";
 input.focus();
 
 };
 
 input.addEventListener("keydown",function(e){
 
-if(e.key === "Enter"){
+if(e.key==="Enter"){
 
-const value = input.value.trim().toUpperCase();
+const value=input.value.trim().toUpperCase();
 
-if(value === "CONNECT"){
+if(value==="CONNECT"){
 
-responseText.innerText = "we hear you.";
-responseText.style.opacity = 1;
+responseText.innerText="we hear you.";
+responseText.style.opacity=1;
 
 setTimeout(function(){
-responseText.innerText = "is it happening now?";
+responseText.innerText="is it happening now?";
 },5000);
 
 setTimeout(function(){
-responseText.innerText = "send something back.";
-},11000);
+responseText.innerText="send something back.";
+},10000);
 
 }
 
@@ -58,4 +56,4 @@ responseText.innerText = "send something back.";
 
 });
 
-};
+}
