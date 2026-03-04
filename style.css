@@ -1,43 +1,27 @@
-body{
-margin:0;
-background:black;
-color:white;
-font-family:monospace;
-display:flex;
-height:100vh;
-align-items:center;
-justify-content:center;
-}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>signal</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-.center{
-text-align:center;
-}
+<body>
 
-button{
-background:none;
-border:1px solid white;
-color:white;
-padding:14px 30px;
-font-size:16px;
-cursor:pointer;
-}
+<div class="center">
 
-input{
-display:none;
-margin-top:20px;
-background:none;
-border:none;
-border-bottom:1px solid white;
-color:white;
-font-size:16px;
-text-align:center;
-outline:none;
-padding:10px;
-width:220px;
-}
+<button id="playBtn">PLAY</button>
 
-#responseText{
-margin-top:30px;
-opacity:0;
-transition:opacity 2s;
-}
+<input id="codeInput" placeholder="respond:" autocomplete="off">
+
+<div id="responseText"></div>
+
+</div>
+
+<audio id="audio1" src="mystery1.mp3"></audio>
+<audio id="audio2" src="mystery2.mp3"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
